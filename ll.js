@@ -17,6 +17,17 @@ class LinkedList {
         }
     }
 
+    append(value) {
+        const node = new Node(value);
+        if (!this.head) {
+            this.head = node;
+            this.tail = node;
+        } else {
+            this.tail.next = node;
+            this.tail = node;
+
+        }
+    }
 
 }
 

@@ -64,12 +64,26 @@ class LinkedList {
 
 
 
-
-    // insertInTo(value) {
-    //     let curentNode = this.head;
-    //     while ()
-    // }
-
+    // insert in specific location
+    insertInTo(value, num) {
+        const numNode = this.numberNode();
+        if (num <= (numNode + 1) && num >= 0) {
+            let previousNode = this.head;
+            for (let i = 1; i < num; i++) {
+                previousNode = previousNode.next;
+            }
+            const node = new Node(value);
+            if (num === 0) {
+                this.insert(value);
+            } else if (num === (numNode + 1)) {
+                this.append(value);
+            } else {
+                const curentNode = previousNode.next;
+                node.next = curentNode;
+                previousNode.next = node;
+            }
+        }
+    }
 
 
     displiy() {
